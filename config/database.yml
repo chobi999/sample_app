@@ -10,7 +10,7 @@ development:
   username: sample_app_user
   password: Iefjieaieu8u
 
-test:
+test: &test
   adapter: sqlite3
   database: db/test.sqlite3
   pool: 5
@@ -21,3 +21,6 @@ production:
   database: sample_app_production
   username: sample_app_user
   password: <%= ENV['HEROKU_TW_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
